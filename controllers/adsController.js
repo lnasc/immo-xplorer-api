@@ -45,8 +45,8 @@ const defaultPriceRange = { min: 0, max: 110000 };
 function calculateAvgSquarePrices(ads) {
     ads.forEach(ad => {
         ad.squarePrice = Math.round(ad.price / parseInt(ad.attributes.square, 10));
-        squarePriceData = priceData[ad.location.zipcode];
-        ad.avgSquarePriceDelta =  squarePriceData ? (ad.squarePrice - squarePriceData.avg) / squarePriceData.avg * 100 : 0;
+        ad.squarePriceData = priceData[ad.location.zipcode];
+        ad.avgSquarePriceDelta =  ad.squarePriceData ? (ad.squarePrice - ad.squarePriceData.avg) / ad.squarePriceData.avg * 100 : 0;
     });
 } 
 
