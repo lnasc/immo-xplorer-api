@@ -12,9 +12,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('./app'));
 
-app.get('/api/ads',(req,res)=>{
+app.post('/api/ads', (req,res)=>{
     let adsController = require('./controllers/adsController');
-    adsController.getAds().subscribe(result => {
+    let priceRange = req.body.priceRange;
+    adsController.getAds(priceRange).subscribe(result => {
         res.status(200).json(result);
     });
 })
