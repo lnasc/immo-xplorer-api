@@ -38,7 +38,7 @@ const locations = [
     {"zipcode": "92110"}  // Clichy
    ];
 
-   const defaultPriceRange = { min: 110000 };
+   const defaultPriceRange = { min: 0, max: 110000 };
 
 function getAds(priceRange) {
     let search = new leboncoin.Search()
