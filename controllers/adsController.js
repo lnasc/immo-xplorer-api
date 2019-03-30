@@ -46,7 +46,7 @@ function calculateAvgSquarePrices(ads) {
     ads.forEach(ad => {
         ad.squarePrice = Math.round(ad.price / parseInt(ad.attributes.square, 10));
         ad.squarePriceData = priceData[ad.location.zipcode];
-        ad.avgSquarePriceDelta =  ad.squarePriceData ? (ad.squarePrice - ad.squarePriceData.avg) / ad.squarePriceData.avg * 100 : 0;
+        ad.avgSquarePriceDelta =  ad.squarePriceData ? Math.round((ad.squarePrice - ad.squarePriceData.avg) / ad.squarePriceData.avg * 100) : 0;
     });
 } 
 
@@ -70,8 +70,8 @@ function getAds(priceRange) {
 
     return from(search.run()).pipe(
         map(data => {
-            data.results = _.sortBy(data.results, r => r.price);
             calculateAvgSquarePrices(data.results);
+            data.results = _.sortBy(data.results, r => r.avgSquarePriceDelta);
             return data;
         }));
     }
