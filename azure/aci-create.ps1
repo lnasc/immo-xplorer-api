@@ -1,0 +1,12 @@
+az container create -g immo-xplorer-ci `
+-n immo-xplorer-aci `
+--image $acrServer/immo-xplorer-api `
+--cpu 1 --memory 1 `
+--registry-username $acrName `
+--registry-password $acrPassword `
+--azure-file-volume-account-name "immoxploreracisto
+--azure-file-volume-account-key $storageKey `
+--azure-file-volume-share-name "immoxploreracishare
+--azure-file-volume-mount-path "/home" `
+-e TestSetting=FromAzCli TestFileLocation=/home/mes
+--dns-name-label "immo-xplorer-api-aci" --ports 80

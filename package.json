@@ -2,10 +2,10 @@
   "name": "immo-scrapper-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node ./src/server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "rxjs": "^6.4.0"
   },
   "devDependencies": {
+    "jshint": "^2.10.2",
     "nodemon": "^1.18.10"
   },
   "author": "",

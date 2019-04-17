@@ -7,7 +7,7 @@ let jshint = require('gulp-jshint');
 gulp.task('default',['jshint','serve']);
 
 gulp.task('jshint',()=>{
-	return gulp.src('./*.js')
+	return gulp.src(['./src/*.js','./src/**/*.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 })
@@ -15,5 +15,5 @@ gulp.task('jshint',()=>{
 // 	require('./test.js');
 // })
 .task('serve',()=>{
-	require('./main.js');
+	require('./src/server.js');
 });
