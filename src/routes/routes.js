@@ -1,21 +1,23 @@
 'use strict';
 
 module.exports = function(app) {
-    var queryController = require('../controllers/queryController');
+    var QueryRepository = require('../controllers/queryController').QueryRepository;
     var adController = require('../controllers/adController');
+
+    var queryRepository = new QueryRepository();
 
     app.route('/')
         .get((req, res) => res.status(200).send('hello'));
 
     app.route('/api/ads')
-        .post(adController.searchAds);
+        .post(adController.searchAds.bind(queryRepository));
 
     app.route('/api/queries')
-        .get(queryController.searchQueries)
-        .post(queryController.createQuery);
+        .get(queryRepository.searchQueries.bind(queryRepository))
+        .post(queryRepository.createQuery.bind(queryRepository));
     
     app.route('/api/queries/:queryId')
-        .get(queryController.getQuery)
-        .put(queryController.updateQuery)
-        .delete(queryController.deleteQuery);
+        .get(queryRepository.getQuery.bind(queryRepository))
+        .put(queryRepository.updateQuery.bind(queryRepository))
+        .delete(queryRepository.deleteQuery.bind(queryRepository));
 };

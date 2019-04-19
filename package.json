@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha './test/**/*.spec.js'",
     "start": "node ./src/server.js",
     "dev": "nodemon server.js"
   },
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "jshint": "^2.10.2",
+    "mocha": "^6.1.4",
     "nodemon": "^1.18.10"
   },
   "author": "",
