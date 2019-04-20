@@ -22,9 +22,12 @@
     "rxjs": "^6.4.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "jshint": "^2.10.2",
     "mocha": "^6.1.4",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "sinon": "^7.3.2"
   },
   "author": "",
   "license": "ISC"

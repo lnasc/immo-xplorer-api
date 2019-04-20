@@ -6,7 +6,7 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     mongoose = require('mongoose'),
-    Query = require('./src//models/queryModel'),
+    Query = require('./src/models/queryModel'),
     routes = require('./src/routes/routes'),
     port = process.env.PORT || 8080,
     mongoUri = "mongodb+srv://immo-xplorer-user:1WERe9xr0q9CfcL9@cluster0-aru9i.azure.mongodb.net/immo-xplorer?retryWrites=true";
