@@ -7,6 +7,7 @@ function QueryRepository(queryModel) {
 function handleResponse(res, err, result) {
   if (err) {
     res.send(err);
+    return;
   }
   res.json(result);
 }
@@ -21,6 +22,9 @@ Object.assign(QueryRepository.prototype, {
   },
   
   getDefaultQuery: function(req, res) {
+    if (!req || !res) {
+      throw new Error("req and res parameters must be defined");
+    }
     this.queryModel.findOne(
       { isDefault: true },
       (err, result) => 
@@ -28,6 +32,9 @@ Object.assign(QueryRepository.prototype, {
   },
   
   getQuery: function(req, res) {
+    if (!req || !res) {
+      throw new Error("req and res parameters must be defined");
+    }
     if (req.params.queryId === 'default') {
       return this.getDefaultQuery(req, res);
     }
@@ -39,6 +46,9 @@ Object.assign(QueryRepository.prototype, {
   },
 
   updateQuery: function(req, res) {
+    if (!req || !res) {
+      throw new Error("req and res parameters must be defined");
+    }
     this.queryModel.findOneAndUpdate(
       req.body.isDefault 
         ? { isDefault: true }
@@ -50,6 +60,9 @@ Object.assign(QueryRepository.prototype, {
   },
   
   createQuery: function (req, res) {
+    if (!req || !res) {
+      throw new Error("req and res parameters must be defined");
+    }
     if (req.body.isDefault) {
       return this.updateQuery(req, res);
     }
@@ -59,6 +72,9 @@ Object.assign(QueryRepository.prototype, {
   },
   
   deleteQuery: function(req, res) {
+    if (!req || !res) {
+      throw new Error("req and res parameters must be defined");
+    }
     this.queryModel.remove({
       _id: req.params.queryId
     }, 

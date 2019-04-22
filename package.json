@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha './test/**/*.spec.js'",
+    "test": "nyc mocha './test/**/*.spec.js'",
+    "test:dev": "gulp",
     "start": "node ./src/server.js",
     "dev": "nodemon server.js"
   },
@@ -14,10 +15,12 @@
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^6.0.0",
     "leboncoin-api": "0.0.35",
     "lodash": "^4.17.11",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.22",
+    "nyc": "^14.0.0",
     "rxjs": "^6.4.0"
   },
   "devDependencies": {
