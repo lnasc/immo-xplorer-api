@@ -1,9 +1,9 @@
 before_script:
-  - npm install;
+  - yarn;
 script: npm test
 language: node_js
 env:
   - PORT=7777
 node_js:
-  - "9.2.0"
+  - "10.15.3"
 #  - "0.12"

@@ -14,7 +14,6 @@
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.0",
-    "jshint": "^2.9.1",
     "leboncoin-api": "0.0.35",
     "lodash": "^4.17.11",
     "mongodb": "^3.2.2",
