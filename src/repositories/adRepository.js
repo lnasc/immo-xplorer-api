@@ -4,7 +4,7 @@ const leboncoin = require('leboncoin-api'),
     map = require('rxjs/operators').map,
     first = require('rxjs/operators').first;
 
-const priceData = require('../../assets/price-data-2');
+const priceData = require('../../assets/price-data-3');
 
 const locations = Object.keys(priceData).map(x => { return { zipcode: x }; });
 const defaultPriceRange = { min: 0, max: 110000 };
