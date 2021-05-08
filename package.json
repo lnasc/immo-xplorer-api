@@ -17,7 +17,7 @@
     "gulp-jshint": "^2.0.0",
     "gulp-mocha": "^6.0.0",
     "leboncoin-api": "0.0.35",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.22",
     "nyc": "^14.0.0",
